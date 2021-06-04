@@ -290,7 +290,7 @@ function Hero() {
         experience.
       </p>
       <a
-        href="https://taodao.finance/dashboard"
+        href="https://app.taodao.finance/dashboard"
         className="mt-8 inline-flex items-center tracking-wide justify-center px-8 py-2 border border-transparent text-lg font-bold rounded-full text-black dark:text-black dark:bg-white bg-white dark:text-white hover:bg-gold dark:hover:bg-gold dark:hover:text-black sm:w-auto"
       >
         Find The Way
@@ -410,7 +410,7 @@ function Nav() {
             </Menu>
             <Toggle />
             <a
-              href="https://taodao.finance/dashboard"
+              href="https://app.taodao.finance/dashboard"
               style={{ borderWidth: "2px" }}
               className="inline-flex items-center px-5 py-2 text-sm leading-4 font-medium rounded-full text-white border hover:text-black dark:text-white hover:bg-gold hover:border-gold dark:hover:text-black"
             >
@@ -602,7 +602,7 @@ function Footer() {
         <div className="space-y-8 xl:col-span-1">
           <div className="flex md:grid md:gap-8 justify-center">
             <a
-              href="https://taodao.finance/dashboard"
+              href="https://app.taodao.finance/dashboard"
               className="w-max max-h-40 items-center px-10 py-5 text-xl leading-4 font-medium rounded-full text-white bg-black dark:text-black dark:bg-white hover:bg-gold hover:text-black"
             >
               Enter App
