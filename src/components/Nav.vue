@@ -3,12 +3,12 @@
     <div class="bg-topnav">
       <div class="container-lg p-responsive d-flex">
         <div class="home-tao-dao-logo">
-          <router-link :to="{ name: 'home' }">
+          <a href="https://taodao.finance">
             <div class="row">
               <img src="~/@/assets/tao_dao_logo-02.png" class="logo-tao mt-4" />
               <h1 class="py-4"></h1>
             </div>
-          </router-link>
+          </a>
         </div>
         <div class="mainnav">
           <!-- <div class="drop-menu-item">
