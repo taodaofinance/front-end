@@ -1,7 +1,9 @@
 import Toggle from "./themeToggle";
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+
+import BgCover from "./bgCover";
 
 import {
   TempleIcon,
@@ -18,55 +20,12 @@ import {
 } from "./svgs";
 
 import logo3d from "../logo3d.svg";
-import dayVidmp4 from "../daytime.mp4";
-import dayVidwebm from "../daytime.mp4";
-import dayVidPoster from "../bg-light.jpg";
 
 const App = () => {
-  useEffect(() => {
-    function resizeVid() {
-      const fold = document.querySelector(".above-the-fold");
-      const vid = document.querySelector(".vid");
-      const vidOverlay = document.querySelector(".vid-overlay");
-
-      vid.style.height = `${fold.offsetHeight}px`;
-      vid.style.width = `${fold.offsetWidth + fold.scrollWidth}px`;
-
-      vidOverlay.style.height = `${fold.offsetHeight}px`;
-      vidOverlay.style.width = `${fold.offsetWidth + fold.scrollWidth}px`;
-
-      vid.controls = false;
-    }
-
-    window.addEventListener("resize", resizeVid);
-
-    setTimeout(() => {
-      resizeVid();
-    }, 1);
-
-    return () => {
-      window.removeEventListener("resize", resizeVid);
-    };
-  }, []);
   return (
     <>
       <div className="relative above-the-fold overflow-hidden">
-        <div style={{ zIndex: "-1" }} className="vid-overlay bg-vid-full" />
-        <div className="bg-vid-full bg-black">
-          <video
-            poster={dayVidPoster}
-            style={{ pointerEvents: "none" }}
-            prefetch="true"
-            className="vid"
-            loop
-            autoPlay
-            muted
-          >
-            <source type="video/webm" src={dayVidwebm} />
-            <source type="video/mp4" src={dayVidmp4} />
-            Sorry, your browser doesn't support embedded videos.
-          </video>
-        </div>
+        <BgCover />
 
         <div className="p-4 lg:p-6 lg:px-8">
           <Nav />
