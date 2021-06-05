@@ -10,8 +10,8 @@ html {
   scroll-behavior: smooth;
 }
 
-.animate-slow-spin {
-  animation: spin 60s linear infinite;
+body {
+  font-family: "DM Sans", sans-serif;
 }
 
 .gold {
@@ -28,6 +28,7 @@ html {
   width: 100%;
   height: 100%;
   z-index: -2;
+  background-size: cover;
 }
 
 .vid-overlay {
@@ -35,12 +36,18 @@ html {
   background: #000;
 }
 
-.vid {
-  object-fit: cover;
+.light .above-the-fold .bg-vid-container {
+  background: url(../bg-light.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
-body {
-  font-family: "DM Sans", sans-serif;
+.dark .above-the-fold .bg-vid-container {
+  background: url(../bg-dark.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.vid {
+  object-fit: cover;
 }
 
 .bg-wave {
@@ -52,13 +59,4 @@ body {
 
 video::-webkit-media-controls-overlay-play-button {
   display: none;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

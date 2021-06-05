@@ -1,7 +1,9 @@
 import Toggle from "./themeToggle";
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
+
+import BgCover from "./bgCover";
 
 import {
   TempleIcon,
@@ -18,55 +20,12 @@ import {
 } from "./svgs";
 
 import logo3d from "../logo3d.svg";
-import dayVidmp4 from "../daytime.mp4";
-import dayVidwebm from "../daytime.mp4";
-import dayVidPoster from "../bg-light.jpg";
 
 const App = () => {
-  useEffect(() => {
-    function resizeVid() {
-      const fold = document.querySelector(".above-the-fold");
-      const vid = document.querySelector(".vid");
-      const vidOverlay = document.querySelector(".vid-overlay");
-
-      vid.style.height = `${fold.offsetHeight}px`;
-      vid.style.width = `${fold.offsetWidth + fold.scrollWidth}px`;
-
-      vidOverlay.style.height = `${fold.offsetHeight}px`;
-      vidOverlay.style.width = `${fold.offsetWidth + fold.scrollWidth}px`;
-
-      vid.controls = false;
-    }
-
-    window.addEventListener("resize", resizeVid);
-
-    setTimeout(() => {
-      resizeVid();
-    }, 1);
-
-    return () => {
-      window.removeEventListener("resize", resizeVid);
-    };
-  }, []);
   return (
     <>
       <div className="relative above-the-fold overflow-hidden">
-        <div style={{ zIndex: "-1" }} className="vid-overlay bg-vid-full" />
-        <div className="bg-vid-full bg-black">
-          <video
-            poster={dayVidPoster}
-            style={{ pointerEvents: "none" }}
-            prefetch="true"
-            className="vid"
-            loop
-            autoPlay
-            muted
-          >
-            <source type="video/webm" src={dayVidwebm} />
-            <source type="video/mp4" src={dayVidmp4} />
-            Sorry, your browser doesn't support embedded videos.
-          </video>
-        </div>
+        <BgCover />
 
         <div className="p-4 lg:p-6 lg:px-8">
           <Nav />
@@ -284,10 +243,7 @@ function Hero() {
         A DeFi Asset Management Ecosystem
       </h2>
       <p className="leading-loose tracking-wide mt-4 text-lg leading-6 text-white dark:text-white">
-        TaoDAO is a DAO governed ecosystem which will provide a suite of
-        products and services. Permissionless, decentralised asset management.
-        Connecting professional fund managers to investors with a focus on user
-        experience.
+        TaoDAO is a DAO governed ecosystem focusing on decentralised asset management. We connect investors with professional fund managers.
       </p>
       <a
         href="https://app.taodao.finance/dashboard"
@@ -408,6 +364,55 @@ function Nav() {
                 </>
               )}
             </Menu>
+
+            <Menu as="div" className="relative inline-block text-left">
+              {({ open }) => (
+                <>
+                  <Menu.Button className="p-2 block text-base font-medium text-white hover:text-gold focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gold">
+                    Governance
+                  </Menu.Button>
+                  <Transition
+                    show={open}
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items
+                      static
+                      className="dark:bg-black origin-top-right absolute mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-black"
+                    >
+                      <div className="py-1">
+                        <Menu.Item as="a">
+                          {({ active }) => (
+                            <a
+                              href="https://scattershot.page/#/taodao.eth"
+                              className="block px-4 py-2 text-black dark:text-white hover:text-black hover:bg-gold dark:hover:text-black"
+                            >
+                              Vote
+                            </a>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <a
+                              href="https://taodaofinance.flarum.cloud/"
+                              className="block px-4 py-2 text-black dark:text-white hover:text-black hover:bg-gold dark:hover:text-black"
+                            >
+                              Forum
+                            </a>
+                          )}
+                        </Menu.Item>
+                      </div>
+                    </Menu.Items>
+                  </Transition>
+                </>
+              )}
+            </Menu>
+
             <Toggle />
             <a
               href="https://app.taodao.finance/dashboard"
