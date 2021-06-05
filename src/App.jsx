@@ -243,10 +243,7 @@ function Hero() {
         A DeFi Asset Management Ecosystem
       </h2>
       <p className="leading-loose tracking-wide mt-4 text-lg leading-6 text-white dark:text-white">
-        TaoDAO is a DAO governed ecosystem which will provide a suite of
-        products and services. Permissionless, decentralised asset management.
-        Connecting professional fund managers to investors with a focus on user
-        experience.
+        TaoDAO is a DAO governed ecosystem focusing on decentralised asset management. We connect investors with professional fund managers.
       </p>
       <a
         href="https://app.taodao.finance/dashboard"
@@ -367,6 +364,55 @@ function Nav() {
                 </>
               )}
             </Menu>
+
+            <Menu as="div" className="relative inline-block text-left">
+              {({ open }) => (
+                <>
+                  <Menu.Button className="p-2 block text-base font-medium text-white hover:text-gold focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gold">
+                    Governance
+                  </Menu.Button>
+                  <Transition
+                    show={open}
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items
+                      static
+                      className="dark:bg-black origin-top-right absolute mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-black"
+                    >
+                      <div className="py-1">
+                        <Menu.Item as="a">
+                          {({ active }) => (
+                            <a
+                              href="https://scattershot.page/#/taodao.eth"
+                              className="block px-4 py-2 text-black dark:text-white hover:text-black hover:bg-gold dark:hover:text-black"
+                            >
+                              Vote
+                            </a>
+                          )}
+                        </Menu.Item>
+                        <Menu.Item>
+                          {({ active }) => (
+                            <a
+                              href="https://taodaofinance.flarum.cloud/"
+                              className="block px-4 py-2 text-black dark:text-white hover:text-black hover:bg-gold dark:hover:text-black"
+                            >
+                              Forum
+                            </a>
+                          )}
+                        </Menu.Item>
+                      </div>
+                    </Menu.Items>
+                  </Transition>
+                </>
+              )}
+            </Menu>
+
             <Toggle />
             <a
               href="https://app.taodao.finance/dashboard"
