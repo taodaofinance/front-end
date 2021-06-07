@@ -7,7 +7,7 @@
 
       <Navbar />
       <div class="wrapper">
-        <div class="dapp-center-modal-dash">
+        <div style="background:#191919" class="dapp-center-modal-dash">
           <b-container class="container-fullwidth">
             <b-row>
               <b-col lg="6" md="6" style="padding-right: 40px;border-right: 1px solidrgba(0, 0, 0, 0.623); ">

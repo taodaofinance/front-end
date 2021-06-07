@@ -581,7 +581,7 @@ nav {
   max-width: 100%;
   margin: auto;
   border-radius: 1rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgb(25, 25, 25);
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-flow: wrap;
@@ -620,7 +620,7 @@ a:hover {
   font-size: 35px;
   letter-spacing: 0.2rem;
   font-weight: 300;
-  color: $taoyellow;
+  color: rgb(242, 211, 157);
 }
 .dapp-center-stats-row {
   width: 100%;
@@ -709,7 +709,7 @@ footer {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('./assets/taoism-8.jpg');
+  background-image: url('./assets/TaoDappBlackBg.jpg');
 }
 
 .swap-input-container {
@@ -1430,7 +1430,7 @@ input.input:read-only {
     margin: 0px;
     border-radius: 0px;
     flex: 1;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: rgb(25, 25, 25);
     align-content: space-between;
   }
 

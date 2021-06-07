@@ -2,9 +2,9 @@
   <div class="dapp-sidebar">
     <div class="dapp-menu-top">
       <div class="branding-header">
-        <router-link :to="{ name: 'home' }" class="branding-header-logo-link">
-          <img class="branding-header-icon" src="~/@/assets/taodao_logo.png" alt="" />
-        </router-link>
+      <a style="display:block;text-align:center" href="https://taodao.finance">
+        <img class="branding-header-icon" src="~/@/assets/tao-new-logo.svg" alt="" />
+      </a>
       </div>
       <div class="branding-menu h-hidden-desktop">
         <div @click="$store.state.settings.menuOpened = !$store.state.settings.menuOpened">
