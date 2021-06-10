@@ -18,6 +18,7 @@
     >
       Exercise pTao
     </router-link>
+    <router-link :to="{ name: 'lock' }" class="button button-dapp-menu"> Locking </router-link>
     <router-link :to="{ name: 'stake' }" class="button button-dapp-menu"> Staking </router-link>
     <router-link :to="{ name: 'lpstake' }" class="button button-dapp-menu">
       LP Staking

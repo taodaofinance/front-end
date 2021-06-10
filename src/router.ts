@@ -17,6 +17,7 @@ const routes: Array<RouteConfig> = [
   { path: '/', name: 'home', component: Home },
   { path: '/dashboard', name: 'dashboard', component: Dashboard },
   { path: '/stake', name: 'stake', component: Stake },
+  { path: '/stake', name: 'lock', component: Stake },
   { path: '/bond', name: 'bond', component: Bond },
   { path: '/lpstake', name: 'lpstake', component: LPStaking },
   { path: '/vested', name: 'vested', component: Vested },
