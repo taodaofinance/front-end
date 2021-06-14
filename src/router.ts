@@ -4,6 +4,7 @@ import Home from '@/views/Home.vue';
 import Dapp from './views/Dapp.vue';
 import Dashboard from './views/Dashboard.vue';
 import Stake from './views/Stake.vue';
+import Lock from './views/Locking.vue';
 import Bond from './views/Bond.vue';
 import Migrate from './views/Swap.vue';
 import LPStaking from './views/LPStaking.vue';
@@ -17,7 +18,7 @@ const routes: Array<RouteConfig> = [
   { path: '/', name: 'home', component: Home },
   { path: '/dashboard', name: 'dashboard', component: Dashboard },
   { path: '/stake', name: 'stake', component: Stake },
-  { path: '/stake', name: 'lock', component: Stake },
+  { path: '/lock', name: 'lock', component: Lock },
   { path: '/bond', name: 'bond', component: Bond },
   { path: '/lpstake', name: 'lpstake', component: LPStaking },
   { path: '/vested', name: 'vested', component: Vested },

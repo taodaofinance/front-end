@@ -29,8 +29,10 @@ const i18n = new VueI18n({ locale: 'en', messages, numberFormats });
 
 const requireComponent = require.context('@/components', true, /[\w-]+\.vue$/);
 requireComponent.keys().forEach(fileName => {
+  console.log("filename: ",fileName);
   const componentConfig = requireComponent(fileName);
   const componentName = upperFirst(camelCase(fileName.replace(/^\.\//, '').replace(/\.\w+$/, '')));
+  console.log("componentName: ",componentName);
   Vue.component(componentName, componentConfig.default || componentConfig);
 });
 
